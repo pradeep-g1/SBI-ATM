@@ -1,9 +1,11 @@
+#let us assume some random persons data which is given backend like database
 data={6303464362:'pradeep',8106402639:'Dinesh',8639162700:'Rajesh',7981656026:'Naveen_basha',9398553385:'sreekanth'}
 data_balance={6303464362:50000002364.0,8639162700:696969.0,8106402639:856749.0,7981656026:10.0,9398553385:12.0}
 pin={6303464362:4362,8639162700:2700,8106402639:2639,7981656026:6026,9398553385:5335}
 print("welcome to State Bank of India","\N{grinning face}")
 
 class ATM:
+    #function for depositing amount into acccount
     def cashdeposit(self,amount,account_number,data_balan):
         self.amount=amount
         self.data_balan=data_balan
@@ -11,6 +13,7 @@ class ATM:
         self.a=self.data_balan[self.account_number]
         self.data_balan[self.account_number]=self.a+self.amount
         return self.data_balan
+    #function for withdraw the amount from account
     def cash_withdrawl(self,amount,account_number,data_balan):
         self.amount=amount
         self.data_balan=data_balan
@@ -18,6 +21,7 @@ class ATM:
         self.a=self.data_balan[self.account_number]
         self.data_balan[self.account_number]=self.a-self.amount
         return self.data_balan
+    #function for pin generation/Pin change
     def change_pin(self,account_number,pin):
         self.pin=pin
         self.account_number=int(input("enter the pin :"))
@@ -26,9 +30,9 @@ class ATM:
             self.pin[account_number]=self.a
             print("PIN is changed successfully")
             return self.pin
-            
         else:
             print("Match not found!\nENTER valid accountnumber")
+     #function for balance enquiry
     def balance_enquiry(self,account_number,data_balan):
         self.account_number=account_number
         self.data_balan=data_balan
